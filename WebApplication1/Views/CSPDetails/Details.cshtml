@@ -1,0 +1,91 @@
+﻿@model WebApplication1.CSPDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CSPDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Finger1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finger1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finger2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finger2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finger3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finger3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finger4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finger4)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserTypeId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

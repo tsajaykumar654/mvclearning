@@ -1,0 +1,411 @@
+﻿@model WebApplication1.Transaction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumerNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsumerNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubDivision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubDivision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceProvider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceProvider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillDueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillDueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollectionAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollectionAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MICR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MICR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MICRDATA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MICRDATA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardTransactionNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardTransactionNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denom12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denom12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedToServerYN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedToServerYN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeclinedTransactionYN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeclinedTransactionYN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayEndClosedYN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayEndClosedYN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptPrintCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptPrintCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ErrorMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ErrorMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MachineID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MachineID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KioskID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KioskID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillMonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillMonth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EncAc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EncAc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EncCa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EncCa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EncPd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EncPd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceNo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

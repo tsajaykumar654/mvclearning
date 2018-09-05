@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MVCAppDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CSPDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Finger1" Type="varbinary(max)" />
+          <Property Name="Finger2" Type="varbinary(max)" />
+          <Property Name="Finger3" Type="varbinary(max)" />
+          <Property Name="Finger4" Type="varbinary(max)" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="UserTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="CSPPunch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PunchIn" Type="nvarchar" MaxLength="10" />
+          <Property Name="PunchOut" Type="nvarchar" MaxLength="10" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="KioskTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartTime" Type="varchar" MaxLength="50" />
+          <Property Name="EndTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MainMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="path" Type="nvarchar(max)" />
+          <Property Name="password" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="MenuAccessright">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MenuId" Type="int" />
+          <Property Name="IsView" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="IsUpdate" Type="bit" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConsumerNo" Type="varchar" MaxLength="250" />
+          <Property Name="Reference1" Type="varchar" MaxLength="250" />
+          <Property Name="Reference2" Type="varchar" MaxLength="250" />
+          <Property Name="Reference3" Type="varchar" MaxLength="250" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="250" />
+          <Property Name="SubDivision" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceProvider" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMode" Type="varchar" MaxLength="25" />
+          <Property Name="PaymentDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillAmount" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="BillDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillDueDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="CollectionAmount" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="BatchAmount" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="7" />
+          <Property Name="ChequeDate" Type="varchar" MaxLength="10" />
+          <Property Name="MICR" Type="varchar" MaxLength="50" />
+          <Property Name="MICRDATA" Type="varchar" MaxLength="50" />
+          <Property Name="CardTransactionNo" Type="varchar" MaxLength="50" />
+          <Property Name="BatchNo" Type="bigint" />
+          <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankCode" Type="varchar" MaxLength="9" />
+          <Property Name="Denom1" Type="int" />
+          <Property Name="Denom2" Type="int" />
+          <Property Name="Denom3" Type="int" />
+          <Property Name="Denom4" Type="int" />
+          <Property Name="Denom5" Type="int" />
+          <Property Name="Denom6" Type="int" />
+          <Property Name="Denom7" Type="int" />
+          <Property Name="Denom8" Type="int" />
+          <Property Name="Denom9" Type="int" />
+          <Property Name="Denom10" Type="int" />
+          <Property Name="Denom11" Type="int" />
+          <Property Name="Denom12" Type="int" />
+          <Property Name="AdditionalInfo1" Type="varchar" MaxLength="250" />
+          <Property Name="AdditionalInfo2" Type="varchar" MaxLength="250" />
+          <Property Name="AdditionalInfo3" Type="varchar" MaxLength="250" />
+          <Property Name="UpdatedToServerYN" Type="bit" />
+          <Property Name="DeclinedTransactionYN" Type="bit" />
+          <Property Name="DayEndClosedYN" Type="bit" />
+          <Property Name="ReceiptPrintCount" Type="int" />
+          <Property Name="ErrorMessage" Type="nvarchar(max)" />
+          <Property Name="MachineID" Type="nvarchar" MaxLength="25" />
+          <Property Name="KioskID" Type="nvarchar" MaxLength="25" />
+          <Property Name="BillMonth" Type="nvarchar" MaxLength="20" />
+          <Property Name="EncAc" Type="nvarchar" MaxLength="100" />
+          <Property Name="EncCa" Type="nvarchar" MaxLength="100" />
+          <Property Name="EncPd" Type="nvarchar" MaxLength="100" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="password" Type="nvarchar" MaxLength="250" />
+          <Property Name="RoleId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <Association Name="FK_MenuAccessright_MainMenu">
+          <End Role="MainMenu" Type="Self.MainMenu" Multiplicity="0..1" />
+          <End Role="MenuAccessright" Type="Self.MenuAccessright" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainMenu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MenuAccessright">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MVCAppDatabaseModelStoreContainer">
+          <EntitySet Name="CSPDetail" EntityType="Self.CSPDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CSPPunch" EntityType="Self.CSPPunch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KioskTime" EntityType="Self.KioskTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainMenu" EntityType="Self.MainMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuAccessright" EntityType="Self.MenuAccessright" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MenuAccessright_MainMenu" Association="Self.FK_MenuAccessright_MainMenu">
+            <End Role="MainMenu" EntitySet="MainMenu" />
+            <End Role="MenuAccessright" EntitySet="MenuAccessright" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MVCAppDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CSPDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Finger1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Finger2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Finger3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Finger4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="UserTypeId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CSPPunch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PunchIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PunchOut" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KioskTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConsumerNo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Reference1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Reference2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Reference3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SubDivision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillAmount" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="BillDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillDueDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CollectionAmount" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="BatchAmount" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="ChequeNo" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MICR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MICRDATA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CardTransactionNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BatchNo" Type="Int64" />
+          <Property Name="ReceiptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankCode" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="Denom1" Type="Int32" />
+          <Property Name="Denom2" Type="Int32" />
+          <Property Name="Denom3" Type="Int32" />
+          <Property Name="Denom4" Type="Int32" />
+          <Property Name="Denom5" Type="Int32" />
+          <Property Name="Denom6" Type="Int32" />
+          <Property Name="Denom7" Type="Int32" />
+          <Property Name="Denom8" Type="Int32" />
+          <Property Name="Denom9" Type="Int32" />
+          <Property Name="Denom10" Type="Int32" />
+          <Property Name="Denom11" Type="Int32" />
+          <Property Name="Denom12" Type="Int32" />
+          <Property Name="AdditionalInfo1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AdditionalInfo2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AdditionalInfo3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedToServerYN" Type="Boolean" />
+          <Property Name="DeclinedTransactionYN" Type="Boolean" />
+          <Property Name="DayEndClosedYN" Type="Boolean" />
+          <Property Name="ReceiptPrintCount" Type="Int32" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MachineID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="KioskID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="BillMonth" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EncAc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EncCa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EncPd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="MVCAppDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CSPDetails" EntityType="Self.CSPDetail" />
+          <EntitySet Name="CSPPunches" EntityType="Self.CSPPunch" />
+          <EntitySet Name="KioskTimes" EntityType="Self.KioskTime" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <EntitySet Name="MainMenus" EntityType="MVCAppDatabaseModel.MainMenu" />
+          <EntitySet Name="MenuAccessrights" EntityType="MVCAppDatabaseModel.MenuAccessright" />
+          <AssociationSet Name="FK_MenuAccessright_MainMenu" Association="MVCAppDatabaseModel.FK_MenuAccessright_MainMenu">
+            <End Role="MainMenu" EntitySet="MainMenus" />
+            <End Role="MenuAccessright" EntitySet="MenuAccessrights" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="MVCAppDatabaseModel.Role" />
+          <EntitySet Name="Users" EntityType="MVCAppDatabaseModel.User" />
+        </EntityContainer>
+        <EntityType Name="MainMenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MenuAccessrights" Relationship="MVCAppDatabaseModel.FK_MenuAccessright_MainMenu" FromRole="MainMenu" ToRole="MenuAccessright" />
+          <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MenuAccessright">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="MenuId" Type="Int32" />
+          <Property Name="IsView" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="IsUpdate" Type="Boolean" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="MainMenu" Relationship="MVCAppDatabaseModel.FK_MenuAccessright_MainMenu" FromRole="MenuAccessright" ToRole="MainMenu" />
+        </EntityType>
+        <Association Name="FK_MenuAccessright_MainMenu">
+          <End Type="MVCAppDatabaseModel.MainMenu" Role="MainMenu" Multiplicity="0..1" />
+          <End Type="MVCAppDatabaseModel.MenuAccessright" Role="MenuAccessright" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainMenu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MenuAccessright">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MVCAppDatabaseModelStoreContainer" CdmEntityContainer="MVCAppDatabaseEntities">
+          <EntitySetMapping Name="CSPDetails">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.CSPDetail">
+              <MappingFragment StoreEntitySet="CSPDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Finger1" ColumnName="Finger1" />
+                <ScalarProperty Name="Finger2" ColumnName="Finger2" />
+                <ScalarProperty Name="Finger3" ColumnName="Finger3" />
+                <ScalarProperty Name="Finger4" ColumnName="Finger4" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CSPPunches">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.CSPPunch">
+              <MappingFragment StoreEntitySet="CSPPunch">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PunchIn" ColumnName="PunchIn" />
+                <ScalarProperty Name="PunchOut" ColumnName="PunchOut" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KioskTimes">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.KioskTime">
+              <MappingFragment StoreEntitySet="KioskTime">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ConsumerNo" ColumnName="ConsumerNo" />
+                <ScalarProperty Name="Reference1" ColumnName="Reference1" />
+                <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+                <ScalarProperty Name="Reference3" ColumnName="Reference3" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="SubDivision" ColumnName="SubDivision" />
+                <ScalarProperty Name="ServiceProvider" ColumnName="ServiceProvider" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="BillAmount" ColumnName="BillAmount" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="BillDueDate" ColumnName="BillDueDate" />
+                <ScalarProperty Name="CollectionAmount" ColumnName="CollectionAmount" />
+                <ScalarProperty Name="BatchAmount" ColumnName="BatchAmount" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="MICR" ColumnName="MICR" />
+                <ScalarProperty Name="MICRDATA" ColumnName="MICRDATA" />
+                <ScalarProperty Name="CardTransactionNo" ColumnName="CardTransactionNo" />
+                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+                <ScalarProperty Name="Denom1" ColumnName="Denom1" />
+                <ScalarProperty Name="Denom2" ColumnName="Denom2" />
+                <ScalarProperty Name="Denom3" ColumnName="Denom3" />
+                <ScalarProperty Name="Denom4" ColumnName="Denom4" />
+                <ScalarProperty Name="Denom5" ColumnName="Denom5" />
+                <ScalarProperty Name="Denom6" ColumnName="Denom6" />
+                <ScalarProperty Name="Denom7" ColumnName="Denom7" />
+                <ScalarProperty Name="Denom8" ColumnName="Denom8" />
+                <ScalarProperty Name="Denom9" ColumnName="Denom9" />
+                <ScalarProperty Name="Denom10" ColumnName="Denom10" />
+                <ScalarProperty Name="Denom11" ColumnName="Denom11" />
+                <ScalarProperty Name="Denom12" ColumnName="Denom12" />
+                <ScalarProperty Name="AdditionalInfo1" ColumnName="AdditionalInfo1" />
+                <ScalarProperty Name="AdditionalInfo2" ColumnName="AdditionalInfo2" />
+                <ScalarProperty Name="AdditionalInfo3" ColumnName="AdditionalInfo3" />
+                <ScalarProperty Name="UpdatedToServerYN" ColumnName="UpdatedToServerYN" />
+                <ScalarProperty Name="DeclinedTransactionYN" ColumnName="DeclinedTransactionYN" />
+                <ScalarProperty Name="DayEndClosedYN" ColumnName="DayEndClosedYN" />
+                <ScalarProperty Name="ReceiptPrintCount" ColumnName="ReceiptPrintCount" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="KioskID" ColumnName="KioskID" />
+                <ScalarProperty Name="BillMonth" ColumnName="BillMonth" />
+                <ScalarProperty Name="EncAc" ColumnName="EncAc" />
+                <ScalarProperty Name="EncCa" ColumnName="EncCa" />
+                <ScalarProperty Name="EncPd" ColumnName="EncPd" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainMenus">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.MainMenu">
+              <MappingFragment StoreEntitySet="MainMenu">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuAccessrights">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.MenuAccessright">
+              <MappingFragment StoreEntitySet="MenuAccessright">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsView" ColumnName="IsView" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MVCAppDatabaseModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,64 @@
+﻿@*@model IEnumerable<WebApplication1.CSPPunch>*@
+
+@model PagedList.IPagedList<WebApplication1.Models.CSPPunchList>
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+
+            @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSort })
+
+        </th>
+        <th>
+            Punch In
+        </th>
+        <th>
+            Punch Out
+            @*@Html.DisplayNameFor(model => model.PunchOut)*@
+        </th>
+        <th>
+            User Name
+            @*@Html.DisplayNameFor(model => model.UserId)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunchIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunchOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.id }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.id })*@
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new {sortOrder = ViewBag.CurrentSort, page }))

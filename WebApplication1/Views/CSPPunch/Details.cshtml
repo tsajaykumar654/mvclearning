@@ -1,0 +1,51 @@
+﻿@model WebApplication1.Models.CSPPunchList
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+<h4>CSPPunch</h4>
+<hr /> 
+<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PunchIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PunchIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PunchOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PunchOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

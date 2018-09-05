@@ -1,0 +1,321 @@
+﻿@model IEnumerable<MVCWebApplication.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsumerNo)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Reference1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reference2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reference3)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubDivision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceProvider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillDueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollectionAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChequeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChequeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MICR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MICRDATA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardTransactionNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankCode)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Denom1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom9)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom11)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denom12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalInfo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalInfo2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalInfo3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedToServerYN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeclinedTransactionYN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayEndClosedYN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptPrintCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ErrorMessage)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.MachineID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KioskID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BillMonth)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EncAc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EncCa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EncPd)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.InvoiceNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConsumerNo)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Reference1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reference2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reference3)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubDivision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceProvider)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillDueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollectionAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BatchAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChequeNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChequeDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MICR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MICRDATA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardTransactionNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BatchNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankCode)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Denom1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom9)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom11)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denom12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalInfo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalInfo2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalInfo3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedToServerYN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeclinedTransactionYN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayEndClosedYN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptPrintCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ErrorMessage)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.MachineID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KioskID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BillMonth)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EncAc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EncCa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EncPd)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceNo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

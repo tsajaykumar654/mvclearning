@@ -1,0 +1,126 @@
+﻿@*@model IEnumerable<WebApplication1.Transaction>*@
+
+@model PagedList.IPagedList<WebApplication1.Transaction>
+@using PagedList.Mvc;
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#demoGrid").DataTable({
+            responsive: true,
+            "processing": true, // for show progress bar
+            "serverSide": true, // for process server side
+            "filter": true, // this is for disable filter (search box)
+            "orderMulti": false, // for disable multiple column at once
+            "pageLength": 15,
+
+            "ajax": {
+                "url": "/Transactions/GetAllData",
+                "type": "POST",
+                "datatype": "json"
+            },
+
+            "columnDefs":
+                [{
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [12],
+                    "searchable": false,
+                    "orderable": false
+                }
+
+                    //{
+                    //    "targets": [9],
+                    //    "searchable": false,
+                    //    "orderable": false
+                    //}
+
+                ],
+
+            "columns": [
+                { "data": "ConsumerNo", "name": "ConsumerNo", "autoWidth": true },
+                { "data": "CustomerName", "name": "CustomerName", "autoWidth": true },
+                { "data": "PaymentMode", "title": "PaymentMode", "name": "CreateDate", "autoWidth": true },
+                { "data": "PaymentDate", "name": "PaymentDate", "autoWidth": true },
+                { "data": "BillAmount", "name": "BillAmount", "autoWidth": true },
+                { "data": "BillDueDate", "name": "BillDueDate", "autoWidth": true },
+                { "data": "CollectionAmount", "name": "CollectionAmount", "autoWidth": true },
+                { "data": "BatchAmount", "name": "BatchAmount", "title": "BatchAmount", "autoWidth": true },
+                { "data": "BatchNo", "name": "BatchNo", "autoWidth": true },
+                { "data": "ReceiptNo", "name": "ReceiptNo", "title": "ReceiptNo", "autoWidth": true },
+                { "data": "MachineID", "name": "MachineID", "autoWidth": true },
+                { "data": "KioskID", "name": "KioskID", "title": "KioskID", "autoWidth": true },
+                {
+                    data: null, render: function (data, type, row) {
+                        return "<a href='#' class='btn btn-danger' onclick=DeleteData('" + row.CustomerID + "'); >Delete</a>";
+                    }
+                }
+
+            ]
+
+        });
+    });
+</script>
+
+<script>
+
+        function DeleteData(CustomerID) {
+            if (confirm("Are you sure you want to delete ...?")) {
+                Delete(CustomerID);
+            }
+            else {
+                return false;
+            }
+        }
+
+
+        @*function Delete(CustomerID) {
+            var url = '@Url.Content("~/")' + "Demo/DeleteCustomer";
+            $.post(url, { ID: CustomerID }, function (data) {
+                if (data == "Deleted") {
+                    alert("Delete Customer !");
+                    oTable = $('#demoGrid').DataTable();
+                    oTable.draw();
+                }
+                else {
+                    alert("Something Went Wrong!");
+                }
+            });
+        }*@
+</script>
+  
+<div class="header" >
+    <h4 class="title">Striped Table with Hover</h4>
+    <p class="category">Here is a subtitle for this table</p>
+</div>
+<div class="content table-responsive table-full-width">
+    <table id="demoGrid"  class="table table-hover table-striped" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ConsumerNo</th>
+                <th>CustomerName</th>
+                <th>PaymentMode</th>
+                <th>PaymentDate</th>
+                <th>BillAmount</th>
+                <th>BillDueDate</th>
+                <th>CollectionAmount</th>
+                <th>BatchAmount</th>
+                <th>BatchNo</th>
+                <th>ReceiptNo</th>
+                <th>MachineID</th>
+                <th>KioskID</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+    </table>
+</div>
